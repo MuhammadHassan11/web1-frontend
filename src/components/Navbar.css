@@ -1,0 +1,54 @@
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #2c3e50;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-left,
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-link:hover {
+    background-color: #e74c3c;
+    color: white;
+    transform: scale(1.05);
+}
+
+.nav-link:not(:last-child) {
+    margin-right: 15px;
+}
+
+/* For small screen responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar-left,
+    .navbar-right {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .nav-link {
+        padding: 8px 15px;
+        margin-bottom: 10px;
+    }
+}
