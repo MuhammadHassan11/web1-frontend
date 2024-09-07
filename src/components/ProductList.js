@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getProducts, deleteProduct } from '../API/Service';
 import { Link } from 'react-router-dom';
-import './ProductList.css'; // Make sure you have this CSS file
+import './ProductList.css'; 
 
 const ProductList = () => {
     const [products, setProducts] = useState([]);
@@ -22,31 +22,38 @@ const ProductList = () => {
     const handleDelete = async (id) => {
         try {
             await deleteProduct(id);
-            fetchProducts(); // Refresh the list
+            fetchProducts(); // Refresh the list after deletion
         } catch (error) {
             console.error('Error deleting product', error);
         }
     };
 
     return (
-        <div>
+        <div className="product-list-container">
             <h2>Product List</h2>
-            <ul>
-                {products.map(product => (
-                    <li key={product.id} className="product-card">
+            <div className="product-cards">
+                {products.map((product) => (
+                    <div key={product.id} className="product-card">
                         <Link to={`/productform/${product.id}`} style={{ textDecoration: 'none', color: 'black' }}>
-                            <h3>{product.name}</h3>
-                            <p>${product.price}</p>
                             <img
                                 src={product.imageUrl}
                                 alt={product.name}
-                                style={{ width: '100px', height: '100px', marginBottom: '10px' }}
+                                className="product-image"
                             />
+                            <div className="product-info">
+                                <h3>{product.name}</h3>
+                                <p>${product.price}</p>
+                            </div>
                         </Link>
-                        <button onClick={() => handleDelete(product.id)} style={{ marginTop: '10px' }}>Delete</button>
-                    </li>
+                        <button
+                            className="delete-button"
+                            onClick={() => handleDelete(product.id)}
+                        >
+                            Delete
+                        </button>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 };

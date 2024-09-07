@@ -1,5 +1,5 @@
 import React from 'react';
-import './Profile.css'; // Import CSS for profile styling
+import './Profile.css';
 
 const Profile = () => {
     // Dummy user data; in a real application, this would come from a backend or user context

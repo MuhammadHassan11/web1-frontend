@@ -3,9 +3,9 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    /* Full viewport height */
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    /* Background gradient */
+
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+
 }
 
 .product-form {
@@ -15,7 +15,7 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     width: 100%;
     max-width: 400px;
-    /* Set a max width */
+
 }
 
 .product-form h2 {

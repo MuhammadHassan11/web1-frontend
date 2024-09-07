@@ -1,30 +1,13 @@
-// src/API/Service.js
-
 import axios from 'axios';
 
-const API_URL = 'https://localhost:7293/api/Api'; // Replace with your API URL
+const API_URL = 'https://localhost:7293/api/Api'; // Update with your API URL
 
-export const getProducts = async () => {
-    const response = await axios.get(`${API_URL}/products`);
-    return response.data;
-};
+export const getProducts = () => axios.get(API_URL);
 
-export const getProduct = async (id) => {
-    const response = await axios.get(`${API_URL}/products/${id}`);
-    return response.data;
-};
+export const getProduct = (id) => axios.get(`${API_URL}/${id}`);
 
-export const createProduct = async (product) => {
-    const response = await axios.post(`${API_URL}/products`, product);
-    return response.data;
-};
+export const createProduct = (product) => axios.post(API_URL, product);
 
-export const updateProduct = async (id, product) => {
-    const response = await axios.put(`${API_URL}/products/${id}`, product);
-    return response.data;
-};
+export const updateProduct = (id, product) => axios.put(`${API_URL}/${id}`, product);
 
-export const deleteProduct = async (id) => {
-    const response = await axios.delete(`${API_URL}/products/${id}`);
-    return response.data;
-};
+export const deleteProduct = (id) => axios.delete(`${API_URL}/${id}`);
