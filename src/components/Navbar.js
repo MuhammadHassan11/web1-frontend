@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './Navbar.css'; // Import the CSS file
+import './Navbar.css'; 
 
 const Navbar = () => {
     const [isLoggedIn, setIsLoggedIn] = React.useState(!!localStorage.getItem('authToken')); // Check if the user is logged in
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        // Implement logout functionality
+       
         localStorage.removeItem('authToken'); // Remove the token from localStorage
         setIsLoggedIn(false);
         navigate('/login'); // Redirect to login page after logout
